@@ -1,7 +1,6 @@
 # grunt-loopback-angular-addmodeldata-fork
 
-> This is a fork of Jordan Thomas's grunt-loopback-angular-addmodeldata which extends grunt-loopback-angular. Auto-generating Angular $resource services for loopback will include model data for use at runtime on angular client.
-
+> I make this fork to support multiple model sources (multiple directories of models)
 ## About the fork
 
 This fork was created and published as a means of properly addressing a bug in grunt-loopback-angular-addmodeldata which will fail to find the correct model.json file in the event of multi-word model name where the default naming convention of the slc model generator is kept. Example: The JSON model config file would not be found if using *slc loopback:model* to generate your model.json files and your model name contained multiple words, such as CamelCaseModelName. The bug in the npm module prior to this fork would attempt to look for CamelCaseModelName.json, when it should be looking for camel-case-model-name.json. Lowercasing of JSON file names has also been added in the event there are issues with your operating system having strict standards on file or directory name casing.
